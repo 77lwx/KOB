@@ -20,7 +20,7 @@
             浪味仙
           </a>
           <ul class="dropdown-menu">
-            <router-link class="dropdown-item"  :to="{name: 'user_bot__index'}">我的bot</router-link>
+            <router-link class="dropdown-item"  :to="{name: 'user_bot_index'}">我的bot</router-link>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="#">退出</a></li>
           </ul>
