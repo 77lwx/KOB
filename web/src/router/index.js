@@ -33,7 +33,6 @@ const routes = [
     name: "user_bot_index",
     component: UserBotIndexView,
   },
-
   {
     path: "/user/account/login/",
     name: "user_account_login",
@@ -44,7 +43,6 @@ const routes = [
     name: "user_account_register",
     component: UserAccountRegisterView,
   },
-
   {
     path: "/404/",
     name: "404",
@@ -53,7 +51,7 @@ const routes = [
   {
     path: "/:catchAll(.*)",
     redirect: "/404/"
-  },
+  }
 ]
 
 const router = createRouter({
