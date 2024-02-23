@@ -6,6 +6,11 @@
                     <div class="card-body">
                         <img :src="$store.state.user.photo" alt="" style="width: 100%;">
                     </div>
+                    <div class="mb-3" style="text-align: center;">
+                        <label>个性签名</label>
+                        <br>
+                        <input type="text" class="form-control">
+                    </div>
                 </div>
             </div>
             <div class="col-9">

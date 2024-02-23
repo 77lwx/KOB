@@ -5,16 +5,18 @@
 </template>
 
 <script>
-import{ GameMap } from "../assets/scripts/GameMap";
-import {ref , onMounted} from 'vue'
-export default{
-    setup(){
-        let parent=ref(null);
-        let canvas=ref(null);
+import { GameMap } from "@/assets/scripts/GameMap";
+import { ref, onMounted } from 'vue'
+import { useStore } from "vuex";
 
+export default {
+    setup() {
+        const store = useStore();
+        let parent = ref(null);
+        let canvas = ref(null);
 
-        onMounted(()=>{
-            new GameMap(canvas.value.getContext('2d'),parent.value)
+        onMounted(() => {
+            new GameMap(canvas.value.getContext('2d'), parent.value, store)
         });
 
         return {
@@ -23,6 +25,7 @@ export default{
         }
     }
 }
+
 
 </script>
 
