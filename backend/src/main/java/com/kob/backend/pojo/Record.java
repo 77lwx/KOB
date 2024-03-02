@@ -9,19 +9,22 @@ import lombok.NoArgsConstructor;
 
 import java.util.Date;
 
-@Data  //自动实现get和set函数
-@NoArgsConstructor//实现无参构造
-@AllArgsConstructor//实现有参构造
-public class Bot {
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class Record {
     @TableId(type = IdType.AUTO)
     private Integer id;
-    private Integer userId;
-    private String title;
-    private String description;
-    private String content;
-    private Integer rating;
+    private Integer aId;
+    private Integer aSx;
+    private Integer aSy;
+    private Integer bId;
+    private Integer bSx;
+    private Integer bSy;
+    private String aSteps;
+    private String bSteps;
+    private String map;
+    private String loser;
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "Asia/Shanghai")
     private Date createtime;
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "Asia/Shanghai")
-    private Date modifytime;
 }

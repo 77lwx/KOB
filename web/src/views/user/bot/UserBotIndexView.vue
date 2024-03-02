@@ -8,7 +8,6 @@
                     </div>
                     <div class="mb-3" style="text-align: center;">
                         <label>个性签名</label>
-                        <br>
                         <input type="text" class="form-control">
                     </div>
                 </div>

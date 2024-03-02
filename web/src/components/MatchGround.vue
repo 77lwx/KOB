@@ -66,19 +66,25 @@ div.matchground {
     margin: 40px auto;
     background-image: url('https://img2.huashi6.com/images/resource/thumbnail/2023/10/14/225827_50727032447.jpg?imageMogr2/quality/75/interlace/1/thumbnail/x1400/gravity/Center/crop/1400x1400/format/webp');
     background-size: cover; /* 调整背景图大小以覆盖整个容器 */
-    background-position: center top; /* 设置背景图位置为居中 */
-
+    background-position: center top; /* 设置背景图位置为水平居中，垂直顶部 */
+    border: 2px solid #000; 
+    border-radius: 10px; /* 添加圆角边框效果 */
 }
+
+
 
 div.user-photo {
     text-align: center;
     padding-top: 18vh;
+
 }
 
 div.user-photo > img {
     border-radius: 50%;
     width: 20vh;
 }
+
+
 
 div.user-username {
     text-align: center;
