@@ -190,8 +190,10 @@ public class Game extends Thread{
     }
 
     private void sendAllMessage(String message) {//工具函数:向两名玩家广播信息
-        WebSocketServer.users.get(playerA.getId()).sendMessage(message);
-        WebSocketServer.users.get(playerB.getId()).sendMessage(message);
+        if( WebSocketServer.users.get(playerA.getId()) != null)
+            WebSocketServer.users.get(playerA.getId()).sendMessage(message);
+        if( WebSocketServer.users.get(playerB.getId()) != null)
+            WebSocketServer.users.get(playerB.getId()).sendMessage(message);
     }
 
 

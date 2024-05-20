@@ -33,12 +33,12 @@ export default{
             socket=new WebSocket(socketUrl);
 
             socket.onopen = () => {
-                console.log("connected!");
+                console.log("connected!");//如果连接成功，将socket存储到全局变量中
                 store.commit("updateSocket", socket);
             }
 
 
-            socket.onmessage = msg => {
+            socket.onmessage = msg => {//接收后端返回的消息
                 const data = JSON.parse(msg.data);
                  if (data.event === "start-matching") {  // 匹配成功
                     store.commit("updateOpponent", {
@@ -48,7 +48,7 @@ export default{
                     setTimeout(() => {
                         store.commit("updateStatus", "playing");
                     }, 200);
-                    store.commit("updateGame",data.game);
+                    store.commit("updateGame",data.game);//更新Game:包括玩家信息和地图
                 }else if (data.event === "move") {
                     console.log(data);
                     const game = store.state.pk.gameObject;
