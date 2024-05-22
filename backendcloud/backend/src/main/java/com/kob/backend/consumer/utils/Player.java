@@ -12,6 +12,8 @@ import java.util.List;
 @NoArgsConstructor
 public class Player {
     private Integer id;
+    private Integer botId;  // -1表示亲自出马，否则表示用AI打
+    private String botCode;
     private Integer sx;//起始x坐标
     private Integer sy;//起始y坐标
     private List<Integer> steps;//保存每一步操作---决定了蛇当前的形状
