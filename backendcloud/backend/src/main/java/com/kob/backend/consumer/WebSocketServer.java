@@ -33,7 +33,7 @@ public class WebSocketServer {
     public Game game = null;
     private final static String addPlayerUrl="http://127.0.0.1:3001/player/add/";
     private final static String removePlayerUrl="http://127.0.0.1:3001/player/remove/";
-    private static UserMapper userMapper;
+    public static UserMapper userMapper;
     public static RecordMapper recordMapper;
 
     public static BotMapper botMapper;
@@ -164,6 +164,7 @@ public class WebSocketServer {
     }
 
     public  void move(int direction){//接收前端的信息传给game
+        System.out.println(direction);
         //判断是A玩家还是B玩家在操作
         if (game.getPlayerA().getId().equals(user.getId())) {
             if(game.getPlayerA().getBotId().equals(-1))//如果是亲自出马才传递操作

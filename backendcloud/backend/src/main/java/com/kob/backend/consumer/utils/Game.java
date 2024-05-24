@@ -2,10 +2,13 @@ package com.kob.backend.consumer.utils;
 
 import com.alibaba.fastjson2.JSONObject;
 import com.kob.backend.consumer.WebSocketServer;
+
 import com.kob.backend.pojo.Bot;
 import com.kob.backend.pojo.Record;
+import com.kob.backend.pojo.User;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
+
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -14,6 +17,7 @@ import java.util.Random;
 import java.util.concurrent.locks.ReentrantLock;
 
 public class Game extends Thread{
+
     final private Integer rows;
     final private Integer cols;
     final private Integer inner_walls_count;
@@ -27,6 +31,7 @@ public class Game extends Thread{
     private String loser = "";  // all: 平局，A: A输，B: B输
 
     private static final String addBotUrl = "http://127.0.0.1:3002/bot/add/";
+
 
 
     public Game(Integer rows,
@@ -283,6 +288,21 @@ public class Game extends Thread{
         return res.toString();
     }
 
+    private void updateUserRating(){
+        User userA = WebSocketServer.userMapper.selectById(playerA.getId());
+        User userB = WebSocketServer.userMapper.selectById(playerB.getId());
+        if(loser.equals("A")){//A输了-2，B+5
+            userA.setRating(userA.getRating()-2);
+            userB.setRating(userB.getRating()+5);
+        }else if(loser.equals("B")){//B输了-2，A+5
+            userA.setRating(userA.getRating()+5);
+            userB.setRating(userB.getRating()-2);
+        }
+        WebSocketServer.userMapper.updateById(userA);
+        WebSocketServer.userMapper.updateById(userB);
+    }
+
+
     private void saveToDatabase() {
         Record record = new Record(
                 null,
@@ -298,13 +318,13 @@ public class Game extends Thread{
                 loser,
                 new Date()
         );
-
+        updateUserRating();
         WebSocketServer.recordMapper.insert(record);
     }
 
 
 
-    private void sendResult() {  // 向两个Client公布结果
+    private void sendResult() {  // 向两个Client公布对战结果
         JSONObject resp = new JSONObject();
         resp.put("event", "result");
         resp.put("loser", loser);

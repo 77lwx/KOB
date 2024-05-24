@@ -39,7 +39,9 @@ public class Consumer extends Thread{
 
 
     private String addUid(String code, String uid) {    // 在code中的Bot类名后添加uid
+        //先从代码中找出字符串
         int k = code.indexOf(" implements com.kob.botrunningsystem.utils.BotInterface");
+        //然后把前k位前面的代码加上+uid返回然后再返回后面的
         return code.substring(0, k) + uid + code.substring(k);
     }
 
@@ -51,7 +53,7 @@ public class Consumer extends Thread{
         String uid = uuid.toString().substring(0, 8);//只取前八位
         BotInterface botInterface = Reflect.compile(
                 "com.kob.botrunningsystem.utils.code" + uid,
-                addUid(bot.getBotCode(), uid)
+                addUid(bot.getBotCode(), uid)//字符串形式的代码
         ).create().get();
 
 

@@ -19,7 +19,7 @@ public class GetListServiceImpl implements GetListService {
     private BotMapper botMapper;
 
     @Override
-    public List<Bot> getList() {
+    public List<Bot> getList( ) {
         UsernamePasswordAuthenticationToken authenticationToken =
                 (UsernamePasswordAuthenticationToken) SecurityContextHolder.getContext().getAuthentication();
         UserDetailsImpl loginUser = (UserDetailsImpl) authenticationToken.getPrincipal();

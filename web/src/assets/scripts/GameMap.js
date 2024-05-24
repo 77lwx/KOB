@@ -38,7 +38,32 @@ export class GameMap extends AcGameObject {
 
 
     add_listening_events() {
-        this.ctx.canvas.focus();
+
+        if(this.store.state.record.is_record){
+            let k = 0;
+            const a_steps = this.store.state.record.a_steps;
+            const b_steps = this.store.state.record.b_steps;
+            const loser = this.store.state.record.record_loser;
+            const [snake0, snake1] = this.snakes;
+            const interval_id = setInterval(() => {
+                // 将除死亡的操作每300ms泫渲染出来
+                if(k >= a_steps.length - 1) {//因为蛇的最后一步是不算的，不需要复现最后一步移动
+                    if(loser === "all" || loser === "A") {
+                        snake0.status = "die";
+                    }
+                    if(loser === "all" || loser === "B") {
+                        snake1.status = "die";
+                    }
+                    clearInterval(interval_id);
+                } else {
+                    snake0.set_direction(parseInt(a_steps[k]));
+                    snake1.set_direction(parseInt(b_steps[k]));
+                }
+                k++;
+            }, 300);
+
+        }else{
+            this.ctx.canvas.focus();
 
         this.ctx.canvas.addEventListener("keydown", e => {
             let d = -1;
@@ -53,6 +78,8 @@ export class GameMap extends AcGameObject {
                 }));
             }
         });
+        }
+        
     }
 
     start() {
