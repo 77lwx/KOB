@@ -17,4 +17,6 @@ KOB别名King Of Bot，一款实现**人人**，**人机**，**机机**对战的
 
 ## 如何拉去项目
 
-复制Https链接或者下载zip本地源代码压缩包
+```bash
+git clone https://github.com/77lwx/KOB.git
+```
