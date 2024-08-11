@@ -38,7 +38,7 @@ git clone https://github.com/77lwx/KOB.git
 ```
 
 
-## 项目展示
+## 项目展示截图
 **简易登录**
 
 **丰富选择**
