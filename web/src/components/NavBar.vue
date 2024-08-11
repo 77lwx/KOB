@@ -29,6 +29,7 @@
           </ul>
         </li>
       </ul>
+       <!-- 如果在获取信息就不展示登录页面了，表示token没过期直接显示个人信息了 -->
       <ul class="navbar-nav" v-else-if="!$store.state.user.pulling_info">
         <li class="nav-item">
           <router-link class="nav-link" :to="{name: 'user_account_login' }" role="button">

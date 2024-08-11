@@ -195,6 +195,8 @@ public class WebSocketServer {
     public void onError(Session session, Throwable error)  {
         error.printStackTrace();
     }
+
+
     public void sendMessage(String message){
         synchronized (this.session){
             try{

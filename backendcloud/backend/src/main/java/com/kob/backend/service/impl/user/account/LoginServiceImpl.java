@@ -21,6 +21,8 @@ public class LoginServiceImpl implements LoginService {
 
     @Override
     public Map<String, String> getToken(String username, String password) {
+        //加密类，加密用户名和密码，不存明文
+
         UsernamePasswordAuthenticationToken authenticationToken =
                 new UsernamePasswordAuthenticationToken(username, password);
 

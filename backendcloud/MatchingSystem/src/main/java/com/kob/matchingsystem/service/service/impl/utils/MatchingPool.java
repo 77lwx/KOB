@@ -76,7 +76,7 @@ public class MatchingPool extends Thread{
                 if(used[j]) continue;
                 Player a = players.get(i), b = players.get(j);
                 if(checkMatched(a, b)) {
-                    used[i] = used[j] = true;
+                    used[i] = used[j] = true;//相当于去除两位选手
                     sendResult(a, b);
                     break;
                 }

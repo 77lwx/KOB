@@ -1,4 +1,5 @@
 <template>
+    <!-- 如果在获取信息就不展示登录页面了，表示token没过期可以直接免去登录 -->
     <ContentField v-if="!$store.state.user.pulling_info">
         <div class="row justify-content-md-center">
             <div class="col-3">
@@ -36,6 +37,7 @@ export default {
         let error_message = ref('');
 
         const jwt_token = localStorage.getItem("jwt_token");
+        //如果token存在，自动登录
         if (jwt_token) {
             store.commit("updateToken", jwt_token);
             store.dispatch("getinfo", {
@@ -58,6 +60,7 @@ export default {
                 password: password.value,
                 success() {
                     store.dispatch("getinfo", {
+                        //刷新页面获取用户信息并且跳转首页
                         success() {
                             router.push({ name: 'home' });
                         }

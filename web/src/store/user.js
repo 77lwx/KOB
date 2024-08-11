@@ -1,13 +1,14 @@
 import $ from 'jquery'
 
 export default {
+    //刷新页面重新渲染，变回默认值
     state: {
         id: "",
         username: "",
         photo: "",
         token: "",
         is_login: false,
-        pulling_info: true,  // 是否正在从云端拉取信息
+        pulling_info: true,  // 是否正在获取信息
     },
     getters: {
     },
@@ -43,6 +44,7 @@ export default {
                 },
                 success(resp) {
                     if (resp.error_message === "success") {
+                        //将用户token保存在localStorage中
                         localStorage.setItem("jwt_token", resp.token);
                         context.commit("updateToken", resp.token);
                         data.success(resp);

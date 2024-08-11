@@ -17,6 +17,8 @@ public class Consumer extends Thread{
     public static RestTemplate restTemplate;
 
     private static final String receiveBotMoveUrl = "http://127.0.0.1:3000/pk/receive/bot/move/";
+    private String uid;
+
     @Autowired
     public void setRestTemplate(RestTemplate restTemplate){
         Consumer.restTemplate=restTemplate;
@@ -51,6 +53,7 @@ public class Consumer extends Thread{
     public void run() {
         UUID uuid = UUID.randomUUID();//获取随机字符串
         String uid = uuid.toString().substring(0, 8);//只取前八位
+        System.out.println(uid);
         BotInterface botInterface = Reflect.compile(
                 "com.kob.botrunningsystem.utils.code" + uid,
                 addUid(bot.getBotCode(), uid)//字符串形式的代码
