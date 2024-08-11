@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> 7c25ea5c3b214e6c743e1945256fa8f500fdcd27
 ![Kob](https://cdn.acwing.com/media/file_system/file/application/icon/1_d7f3b93efd-kob_D25f2sT.png)
 
 # KOB是什么？
@@ -12,6 +16,7 @@ KOB别名King Of Bot，一款实现**人人**，**人机**，**机机**对战的
 *  对局回放：对局回放处存储了所有对局，点开即可自动查看对局记录
 *  编写智能的bot代码 ：玩家可以自己编写智能bot代码，实现更加智能的bot在游戏中获取胜利
 ## 技术栈
+<<<<<<< HEAD
 - Java
 - Spring Boot
 - Vue
@@ -20,3 +25,27 @@ KOB别名King Of Bot，一款实现**人人**，**人机**，**机机**对战的
 ```bash
 git clone https://github.com/77lwx/KOB.git
 ```
+=======
+*  Vue
+* SpringBoot
+* SpringBootCloud
+*  RestTemplate
+## 如何拉去项目
+
+复制Https链接或者下载zip本地源代码压缩包
+```
+git clone https://github.com/77lwx/KOB.git
+```
+
+
+## 项目展示
+**简易登录**
+
+**丰富选择**
+
+**激情对战**
+
+**复盘查看**
+
+**天梯排行**
+>>>>>>> 7c25ea5c3b214e6c743e1945256fa8f500fdcd27
