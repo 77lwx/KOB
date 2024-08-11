@@ -27,11 +27,16 @@ git clone https://github.com/77lwx/KOB.git
 
 ## 项目展示
 **简易登录**
+![image](https://github.com/user-attachments/assets/0256b062-f01b-459d-a116-7295e2d9548d)
 
 **丰富选择**
+![image](https://github.com/user-attachments/assets/9bdc4552-165b-4060-8401-80f75af6ebb1)
 
 **激情对战**
+![image](https://github.com/user-attachments/assets/05548019-c698-4695-9362-e4587577cd23)
 
 **复盘查看**
+![image](https://github.com/user-attachments/assets/83a440a7-136e-4817-98f9-5e3fc0c07d65)
 
 **天梯排行**
+![image](https://github.com/user-attachments/assets/71eecad1-9c4f-43c8-bbcf-5f2edb1f4814)
