@@ -1,9 +1,10 @@
 
 ![Kob](https://cdn.acwing.com/media/file_system/file/application/icon/1_d7f3b93efd-kob_D25f2sT.png)
 
-# KOB是什么？
+# 胜"![0B18F4D9](https://github.com/user-attachments/assets/451ecca6-feea-4a08-b7e3-535731792756)
+"为王是什么？
 
-KOB别名King Of Bot，一款实现**人人**，**人机**，**机机**对战的回合制贪吃蛇游戏，可以让用户登录，注册，并且看到本人拥有的bot（bot代码均由本人书写），以及所有用户的天梯积分。
+胜"蛇"为王别名King Of Bot，一款实现**人人**，**人机**，**机机**对战的回合制贪吃蛇游戏，可以让用户登录，注册，并且看到本人拥有的bot（bot代码均由本人书写），以及所有用户的天梯积分。
 
 
 ## 功能特点
